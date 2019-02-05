@@ -60,9 +60,9 @@ void loop() {
         if(velocityControl){
         
           // 0.1 Choose motor 1 desired velocity by setting useSineInput
-          boolean useSineInput = true;       // false: use STEP INPUT, true: use SINE WAVE INPUT
+          boolean useSineInput = false;       // false: use STEP INPUT, true: use SINE WAVE INPUT
           // 0.2 Choose controller type
-          boolean useClosedLoopControl = true;  // false: open loop control, true: closed loop control
+          boolean useClosedLoopControl = false;  // false: open loop control, true: closed loop control
           
           // 1. Calculate the current desired velocity
           if ( !useSineInput ){
@@ -102,7 +102,9 @@ void loop() {
           // 5. Position control. Remember to set velocityControl = false in the setup(). 
           // 5.1 TODO: Set the wheel velocity and change your controllers in lab1_funcs.cpp corresponding to the task.
           // Note: that you do not have to calculate a velocity for this task.
-          desiredWheelPos1 = wheelRadius*PI*2;
+
+          //5.2 TODO: Edit the following line and uncomment it to represent the part of the lab you are completing. 
+          //desiredWheelPos1 = 
 
           encoder1count = 1*readEncoder(1);
 

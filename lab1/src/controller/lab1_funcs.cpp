@@ -1,6 +1,6 @@
 // Peter KT Yu        - peterkty _ mit _ edu, Sept 2016
 // Ryan Fish          - fishr _mit_ edu,      Sept 2016
-
+// Jerry Ng           - jerryng _mit_ edu,    Jan 2019
 #include "lab1_funcs.h"
 #include "helper.h"
 
@@ -11,7 +11,7 @@ int openLoopController()
     // remember the PWM limit is [-400,400]!
 
     // Fix this line
-    m1Command = desiredMV1 * 400/maxMV;
+    //m1Command =
 
     return m1Command;
 }
@@ -24,12 +24,12 @@ void storeOldVals()
     //   relevant variables:
     //   encoder1count
     //   encoder1countPrev
-    encoder1countPrev = encoder1count;
+    
 
     // TODO: Store the old error values so you can take their derivative
     //   error1
     //   error1Prev
-    error1Prev = error1;
+    
 }
 
 float motor1_velocity()
@@ -42,7 +42,7 @@ float motor1_velocity()
     //   dt
 
     // Fix this line and uncomment it
-    mV1 = (encoder1count - encoder1countPrev)/dt * enc2robotvel;
+    //mV1 = 
 
     return mV1;
 }
@@ -56,9 +56,9 @@ float proportional_control()
     //   error1
 
     // Fix this line and uncomment it
-    error1 = desiredMV1 - mV1;
+    //error1 = 
 
-    proportionalCommand1 = error1 * Kpv1;
+    //proportionalCommand1 = 
     return proportionalCommand1;
 }
 
@@ -66,7 +66,7 @@ int closedLoopController()
 {
     // TODO: Sum your various controls here 
     // e.g. proportional_control() + derivative_control() + integral_control()
-    m1Command = proportional_control() + integral_control() + derivative_control();
+    m1Command = proportional_control();
     return m1Command;
 }
 
@@ -80,7 +80,7 @@ float derivative_control()
     //  Kdv1
     
     // Fix this line and uncomment it
-    derivativeCommand1 = Kdv1*(error1 - error1Prev)/dt;
+    //derivativeCommand1 = 
     return derivativeCommand1;
 }
 
@@ -94,41 +94,33 @@ float integral_control()
     //  dt
     //  Kiv1
 
-    // Fix this line and uncomment it
-    integratedError1 = integratedError1 + error1*dt;
-    integralCommand1 = Kiv1 * integratedError1;
-    if(integralCommand1 > 200){
-      integralCommand1 = 200;
-    }
-    else if(integralCommand1 < -200){
-      integralCommand1 = -200;
-    }
+    // Fix these lines and uncomment them
+    //integratedError1 = 
+    //integralCommand1 = 
     return integralCommand1;
 }
 
 
 float wheelProportional_control()
 {
-    //TODO: Use the previously integrated error and the current error
-    //to calculate the current error integral
+    //TODO: Use the desired wheel position and the current wheel position
+    //to calculate the current error
     //relevant variables:
     //  wheelPosError1
     //  desiredWheelPos
     //  wheelPos
     //  Kpp1
   
-    wheelPosError1 = desiredWheelPos1 - wheelPos1;
-
-    //  Fix this line and uncomment it
-    wheelProportionalCommand1 = Kpp1*wheelPosError1;
+    //  Fix these lines and uncomment tje,
+    //wheelPosError1 =
+    //wheelProportionalCommand1 = 
     return wheelProportionalCommand1;
     
 }
 
 float wheelDerivative_control()
 {
-    //TODO: Use the previously integrated error and the current error
-    //to calculate the current error integral
+    //TODO: Use the position error and the past position errorto determine the derivative command.
     //relevant variables:
     //  wheelPosError1
     //  wheelPosError1Prev
@@ -136,7 +128,7 @@ float wheelDerivative_control()
     //  Kdp1
     
     // Fix this line and uncomment it
-    wheelDerivativeCommand1 = Kdp1*(wheelPosError1 - wheelPosError1Prev)/dt;
+    //wheelDerivativeCommand1 = 
     return wheelDerivativeCommand1;
 }
 
@@ -151,14 +143,7 @@ float wheelIntegral_control()
     //  Kip1
 
     // Fix these two lines and uncomment it
-    integratedWheelPosError1 = integratedWheelPosError1 + wheelPosError1*dt;
-    wheelIntegralCommand1 = Kip1*integratedWheelPosError1;
-    if(wheelIntegralCommand1 > 200){
-      wheelIntegralCommand1 = 200;
-    }
-    if(wheelIntegralCommand1 < -200){
-      wheelIntegralCommand1 = -200;
-    }
+    //integratedWheelPosError1 = 
     return wheelIntegralCommand1;
   
 }
@@ -168,7 +153,7 @@ int wheelPositionController()
 
     // TODO: Sum your various controls here 
     // e.g. wheelProportional_control() + wheelIntegral_control() + wheelDerivative_control();
-    m1Command = wheelProportional_control() + wheelIntegral_control() + wheelDerivative_control();
+    //m1Command = wheelProportional_control()
     return m1Command;
 }
 

@@ -1,6 +1,7 @@
 /*
 Ryan Fish - fishr _mit_ edu
 Sept 2016
+// Jerry Ng           - jerryng _mit_ edu,    Jan 2019
 */
 
 #ifndef LAB1_FUNCS_H

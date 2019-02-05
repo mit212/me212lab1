@@ -2,7 +2,7 @@
 // Daniel J. Gonzalez - dgonz _ mit _ edu,    Sept 2015
 // Peter KT Yu        - peterkty _ mit _ edu, Sept 2016
 // Ryan Fish          - fishr _mit_ edu,      Sept 2016
-
+// Jerry Ng           - jerryng _mit_ edu,    Jan 2019
 
 #include "DualMC33926MotorShield.h"
 

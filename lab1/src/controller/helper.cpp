@@ -26,9 +26,9 @@ float         dt = 0;
 
 // Velocity Control Gains, Motor 1
 bool velocityControl = true;
-const float Kpv1 = 2500.0;  // around 1000 is good for a start
+const float Kpv1 = 1000;  // around 1000 is good for a start
 const float Kdv1 = 0.00;     // Keep this value less than 10
-const float Kiv1 = 200.0;   // around 20 is good for a start
+const float Kiv1 = 0;   // around 20 is good for a start
 float error1 = 0.0;
 float error1Prev = 0.0;
 float integratedError1 = 0;
@@ -58,9 +58,9 @@ int wheelDerivativeCommand1 = 0;
 int wheelIntegralCommand1 = 0;
 
 //Position Control Gains, Motor1
-const float Kpp1 = 2000;  //around 500 is a good start.
-const float Kdp1 = 0.0;//1200.0;  // try 0 and 1000.
-const float Kip1 = 0.0;//1400.0;  // around 5 is a good start. do not exceed 400.
+const float Kpp1 = 500.0;  //around 500 is a good start.
+const float Kdp1 = 0.0; // try 0 and 1000.
+const float Kip1 = 0.0; // around 5 is a good start. do not exceed 400.
 ///////////////////////Helper Functions///////////////////////  
   
 void stopIfFault()

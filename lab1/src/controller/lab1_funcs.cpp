@@ -8,6 +8,7 @@ int openLoopController()
 {
     // TODO:  Replace this with a calculated open loop motor command
     // e.g.  m1Command = desiredMV1 * some_factor;
+    // refer to helper.h for variables to use for "some_factor"
     // remember the PWM limit is [-400,400]!
 
     // Fix this line
@@ -107,8 +108,8 @@ float wheelProportional_control()
     //to calculate the current error
     //relevant variables:
     //  wheelPosError1
-    //  desiredWheelPos
-    //  wheelPos
+    //  desiredWheelPos1
+    //  wheelPos1
     //  Kpp1
   
     //  Fix these lines and uncomment tje,

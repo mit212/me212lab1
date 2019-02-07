@@ -106,6 +106,8 @@ void loop() {
           //5.2 TODO: Edit the following line and uncomment it to represent the part of the lab you are completing. 
           //desiredWheelPos1 = 
 
+          //5.3 TODO: Make sure the following line matches the edits you made in the previous section. 
+
           encoder1count = 1*readEncoder(1);
 
           m1Command = wheelPositionController();
